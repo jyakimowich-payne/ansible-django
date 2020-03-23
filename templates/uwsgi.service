@@ -27,6 +27,7 @@ ExecStart=/usr/local/bin/uwsgi \
         --master \
         --logto /var/log/uwsgi/{{ django_project_name }}.log \
         --enable-threads \
+        --lazy-apps \
         --max-requests {{ django_uwsgi_max_requests }} \
         {% if django_uwsgi_stats -%}
         --stats {{ django_uwsgi_stats }} \
